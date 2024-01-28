@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title> Health Record Book </title>
+
+</head>
+<body>
+
+    <header>
+        <h1>Health Record Book</h1>
+        <!-- You can add a navigation bar or other header elements here -->
+    </header>
+
+    <section class="main-content">
+        <div class="content">
+            <h2>Welcome to your secured health record books</h2>
+            <p> Rest assured knowing your data is secured. Our record books are built with robust </p>
+            <p> security measures, prioritizing confidentiality and protection against unauthorized access. </p>
+        </div>
+
+        <div class="login-form">
+            <h2>Login</h2>
+            <!-- Your login form can be added here -->
+            <form action="/login" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="{{ csrf_token() }}" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"  value="{{ csrf_token() }}"  required>
+                <div class="first-login">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">First login</label>
+                </div>
+                <label >OTP:</label>
+                <input type="text" name="otp">
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Engineering Thesis.</p>
+    </footer>
+
+</body>
+</html>

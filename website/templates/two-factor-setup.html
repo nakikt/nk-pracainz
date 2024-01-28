@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title> Health Record Book </title>
+</head>
+<body>
+
+  <header>
+        <div class="title">
+            <h1>Health Record Book</h1>
+        </div>
+    </header>
+  <center>
+    <section class="main-content">
+
+         <h1>Two Factor Authentication Setup</h1>
+    <p>You are almost done! Please start Authenticator on your smartphone and scan the following QR Code with it:</p>
+    <p><img id="qr-code" src="{{ url_for('auth.qr_code') }}" alt="QR Code" />
+        </p>
+
+    <p>I'm done, take me to the  <a href="{{ url_for('views.home') }}">Home</a> page!</p>
+    </section>
+  </center>
+    <footer>
+        <p>&copy; 2024 Engineering Thesis.</p>
+    </footer>
+
+</body>
+</html>

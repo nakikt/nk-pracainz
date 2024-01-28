@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title> Health Record Book </title>
+</head>
+<body>
+
+  <header>
+        <div class="title">
+            <h1>Health Record Book</h1>
+        </div>
+        <div class="buttons">
+            <a href="/doctor"><button >All Health Books</button></a>
+            <a href="/logout"><button onclick="logout()">Logout</button></a>
+        </div>
+    </header>
+    <section class="main-content">
+        <div class="login-form">
+            <!-- Your login form can be added here -->
+            <h2>Patient Health Record</h2>
+
+            <div class="patient-info-box">
+                <div class="patient-info">
+                    <p><strong>Name: </strong> {{response[0]['name_surname']}} </p>
+                     <p><strong>Date of Birth: </strong> {{response[0]['birth_date']}}</p>
+                    <p><strong>Diseases: </strong> {{response[0]['diseases']}}</p>
+                    <form method="post">
+                        <label>Add disease:</label>
+                <input autocomplete="off" type="text"  name="disease">
+                        <button type="submit">Add</button>
+                    </form>
+                    <p><strong> Vaccinations: </strong>{{response[0]['vaccinations']}}</p>
+                    <form method="post">
+                <label>Add vacination:</label>
+                <input type="text" autocomplete="off" name="vaccination">
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Engineering Thesis.</p>
+    </footer>
+
+</body>
+</html>

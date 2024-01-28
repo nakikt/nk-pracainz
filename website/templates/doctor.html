@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/styles.css">
+    <title> Health Record Book </title>
+</head>
+<body>
+
+  <header>
+        <div class="title">
+            <h1>Health Record Book</h1>
+        </div>
+        <div class="buttons">
+  <a href="/logout"><button onclick="logout()">Logout</button></a>
+        </div>
+    </header>
+    <section class="main-content">
+                <div class="main-title">
+                           <h2>Patients Health Records</h2>
+
+                </div>
+        {%    for patient in response %}
+        <div class="all-patients-form">
+            <!-- Your login form can be added here -->
+ <form action="/doctor/{{patient['id']}}">
+            <div class="patient-info-box">
+                <div class="patient-info">
+
+                    <p><strong> Name:  </strong> {{patient['name_surname']}}
+                    <strong>Date of Birth:  </strong> {{patient['birth_date']}}
+                    <strong>Diseases:  </strong> {{patient['diseases']}}
+                    <strong>Vaccinated:  </strong> {{patient['vaccinations']}} </p>
+                        <input type="submit" value="Edit">
+
+                </div>
+            </div>
+          </form>
+        </div>
+        {% endfor %}
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Engineering Thesis.</p>
+    </footer>
+
+</body>
+</html>
